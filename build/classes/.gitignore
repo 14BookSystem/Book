@@ -1,0 +1,9 @@
+/.struts.mex
+/applicationContext-action.xml
+/applicationContext-dao.xml
+/applicationContext-service.xml
+/applicationContext.xml
+/com/
+/globe.properties
+/log4j.properties
+/struts.xml

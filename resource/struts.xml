@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.devMode" value="false" />
+	<package name="default" extends="struts-default,json-default"
+		namespace="/">
+		<global-results>
+			<result name="input">error.jsp</result>
+		</global-results>
+		<action name="login" class="loginaction" method="login">
+			<result name="success">
+				/index.jsp
+            </result>
+			<result name="login">
+				/login.jsp
+            </result>
+		</action>
+		<action name="employee_add" class="employeeaction" method="add">
+			<result name="success">
+				/admin/employee/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="employee_edit" class="employeeaction" method="edit">
+			<result name="success">
+				/admin/employee/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="employee_list" class="employeeaction" method="list">
+			<result name="success">
+				/admin/employee/find.jsp
+            </result>
+		</action>
+		<action name="employee_del" class="employeeaction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">employee_list</param>
+			</result>
+		</action>
+		<action name="employee_save" class="employeeaction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">employee_list</param>
+			</result>
+		</action>
+		<action name="employee_listjson" class="employeeaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetroom_add" class="meetroomaction" method="add">
+			<result name="success">
+				/admin/meetroom/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="meetroom_edit" class="meetroomaction" method="edit">
+			<result name="success">
+				/admin/meetroom/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="meetroom_list" class="meetroomaction" method="list">
+			<result name="success">
+				/admin/meetroom/find.jsp
+            </result>
+		</action>
+		<action name="meetroom_del" class="meetroomaction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">meetroom_list</param>
+			</result>
+		</action>
+		<action name="meetroom_save" class="meetroomaction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">meetroom_list</param>
+			</result>
+		</action>
+		<action name="meetroom_guihuan2" class="meetroomaction" method="guihuan2">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">meetroom_list</param>
+			</result>
+		</action>
+		<action name="meetroom_listjson" class="meetroomaction" method="listjson">
+			<result name="success">
+				/user/book/saveOrUpdate.jsp
+            </result>
+		</action>
+		<action name="meetroom_book" class="meetroomaction" method="meetroom_book">
+			<result name="success">
+				/user/book/ok.jsp
+            </result>
+		</action>
+		<action name="meetroom_save_" class="meetroomaction" method="save_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetroom_delete_" class="meetroomaction" method="delete_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetroom_guihuan2_" class="meetroomaction" method="guihuan2_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetroom_detailjson" class="meetroomaction"
+			method="detailjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetroom_guashi" class="meetroomaction"
+			method="guashi">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetroom_guihuan" class="meetroomaction"
+			method="guihuan">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetbook_save" class="meetbookaction" method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetbook_add" class="meetbookaction" method="meetbook_add">
+			<result name="success">
+				/user/book/ok.jsp
+            </result>
+		</action>
+	
+		<action name="meetbook_list" class="meetbookaction" method="list">
+			<result name="success">
+				/admin/book/find.jsp
+            </result>
+		</action>
+		<action name="meetbook_jsonlist" class="meetbookaction" method="meetbook_jsonlist">
+			<result name="success">
+				/user/book/find.jsp
+            </result>
+		</action>
+		<action name="meetbook_borrow" class="meetbookaction" method="meetbook_borrow">
+			<result name="success">
+				/user/borrow/findborrow.jsp
+            </result>
+		</action>
+		<action name="meetborrow_confirm" class="meetbookaction" method="meetborrow_confirm">
+			<result name="success">
+				/user/borrow/findborrow.jsp
+            </result>
+		</action>
+		<action name="meetborrow_list" class="meetbookaction" method="meetborrow_list">
+			<result name="success">
+				/user/borrow/find.jsp
+            </result>
+		</action>
+		<action name="meetborrow_listborrow" class="meetbookaction" method="meetborrow_listborrow">
+			<result name="success">
+				/user/borrow/borrowlist.jsp
+            </result>
+		</action>
+		<action name="meetborrow_back" class="meetbookaction" method="meetborrow_back">
+			<result name="success">
+				/user/borrow/borrowlist.jsp
+            </result>
+		</action>
+		<action name="meetbook_listborrow" class="meetbookaction" method="listborrow">
+			<result name="success">
+				/admin/borrow/find.jsp
+            </result>
+		</action>
+			<action name="meetbook_saveborrow" class="meetbookaction" method="saveborrow">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetbook_listborrowbyuserjson" class="meetbookaction"
+			method="listborrowbyuserjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetbook_confirm_" class="meetbookaction"
+			method="confirm_">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+			<action name="meetbook_listborrowjson" class="meetbookaction" method="listborrowjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+			<action name="meetbook_listborrowalljson" class="meetbookaction" method="listborrowalljson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+			<action name="meetbook_listalljson" class="meetbookaction" method="listalljson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+			<action name="meetbook_confirm" class="meetbookaction" method="confirm">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">meetbook_list</param>
+			</result>
+		</action>
+		<action name="meetbook_listjson" class="meetbookaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+	
+		<action name="meetbook_listbyuserjson" class="meetbookaction"
+			method="listbyuserjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		
+		<action name="meetbook_delete" class="meetbookaction" method="delete">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="meetbook_deleteborrow" class="meetbookaction" method="deleteborrow">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_login" class="useraction" method="login">
+			<result name="success">
+				/user_index.jsp
+            </result>
+            <result name="login">
+				/user.jsp
+            </result>
+		</action>
+		<action name="user_loaddata" class="useraction" method="loaddata">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="health_save" class="healthaction" method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="health_listjson" class="healthaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="message_save" class="messageaction" method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+		<action name="message_listjson" class="messageaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="phone_save" class="phoneaction" method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="phone_listjson" class="phoneaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="user_list" class="useraction" method="list">
+			<result name="success">
+				/admin/User/find.jsp
+            </result>
+		</action>
+		<action name="user_del" class="useraction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">user_list</param>
+			</result>
+		</action>
+		<action name="user_reg" class="useraction" method="reg">
+			<result name="success">
+				/register.jsp
+            </result>
+		</action>
+		<action name="comments_save" class="commentsaction" method="save">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+		<action name="comments_listjson" class="commentsaction" method="listjson">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					jsonString
+                </param>
+			</result>
+		</action>
+
+	</package>
+</struts>    

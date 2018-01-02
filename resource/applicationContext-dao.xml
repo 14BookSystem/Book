@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+	<bean id="baseDAO" class="com.common.dao.impl.BaseDAO">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+		<bean id="commentsdao" class="com.common.dao.impl.CommentsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="admindao" class="com.common.dao.impl.AdminDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="employeedao" class="com.common.dao.impl.EmployeeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="userdao" class="com.common.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="meetbookdao" class="com.common.dao.impl.MeetBookDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="messagedao" class="com.common.dao.impl.MessageDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="meetroomdao" class="com.common.dao.impl.MeetRoomDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+
+</beans>

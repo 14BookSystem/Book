@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+
+	<bean id="employeeaction" class="com.common.action.EmployeeAction" scope="prototype">
+		<property name="employeeservice" ref="employeeservice"/>
+	</bean>
+	<bean id="meetbookaction" class="com.common.action.MeetBookAction" scope="prototype">
+		<property name="meetbookservice" ref="meetbookservice"/>
+	</bean>
+		<bean id="commentsaction" class="com.common.action.CommentsAction" scope="prototype">
+		<property name="commentsservice" ref="commentsservice"/>
+	</bean>
+	<bean id="messageaction" class="com.common.action.MessageAction" scope="prototype">
+		<property name="messageservice" ref="messageservice"/>
+	</bean>
+	<bean id="meetroomaction" class="com.common.action.MeetRoomAction" scope="prototype">
+		<property name="meetroomservice" ref="meetroomservice"/>
+	</bean>
+	<bean id="loginaction" class="com.common.action.LoginAction" scope="prototype">
+		<property name="adminservice" ref="adminservice"/>
+	</bean>
+	<bean id="useraction" class="com.common.action.UserAction" scope="prototype">
+		<property name="userservice" ref="userservice"/>
+	</bean>
+
+
+</beans>
